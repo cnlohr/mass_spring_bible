@@ -1,0 +1,18 @@
+All code specific to this project is:
+
+(C) 2020 <>< Charles Lohr, under the MIT/x11 license OR the the
+	2- or 3-Clause NewBSD license, You choose.
+	https://opensource.org/licenses/MIT
+	https://opensource.org/licenses/BSD-3-Clause
+
+stb_image_writer.h is from nothing's STB
+
+All bible crossreference data on the project is: CC-4.0-BY
+	https://creativecommons.org/licenses/by/4.0/
+See OpenBible.info
+	https://www.openbible.info/labs/cross-references/
+	
+The WEB Bible (Word English Bible) is licensed under a
+1,000 year license or under public domain, whichever is
+applicable under local statutes.
+
