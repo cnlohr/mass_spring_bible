@@ -21,10 +21,8 @@ tmp/eng-web_readaloud.zip :
 versemaker : versemaker.c
 	gcc -g -o $@ $^
 
-verses.tsv : versemaker tmp/eng-web_readaloud.zip
-	./$< tmp/eng-web_readaloud.zip
-# Cross-references.
-
+assets/bible_data.png : versemaker tmp/eng-web_readaloud.zip tmp/cross_references.txt
+	./$< tmp/eng-web_readaloud.zip outfile.tsv tmp/cross_references.txt
 
 #Topical bible: should we instead use raw word scores?  Or the other file?
 
@@ -36,18 +34,25 @@ tmp/cross_references.txt : tmp/cross-references.zip
 	unzip -o $< -d tmp/
 	touch $@
 
-cross_reference_processor : cross_reference_processor.c
-	gcc -g -o $@ $^
+tmp/topic-scores.zip : 
+	mkdir -p tmp
+	wget https://a.openbible.info/data/topic-scores.zip -P tmp/
 
-assets/truncated_cross_references.png : cross_reference_processor tmp/cross_references.txt
-	./$< tmp/cross_references.txt
+tmp/topic-scores.txt : tmp/topic-scores.zip
+	unzip -o $< -d tmp/
+	touch $@
+	
 
-everything : assets/truncated_cross_references.png
+#cross_reference_processor : cross_reference_processor.c
+#	gcc -g -o $@ $^
+#assets/truncated_cross_references.png : cross_reference_processor tmp/cross_references.txt
+#	./$< tmp/cross_references.txt
+
+everything : assets/bible_data.png
 
 clobber :
 	rm -rf tmp
 	rm -rf assets
-	rm -rf thirdparty
 
 clean :
-	rm -rf cross_reference_processor
+	rm -rf cross_reference_processor versemaker tmp/cross_references.txt

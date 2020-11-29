@@ -64,7 +64,7 @@ const char * BibleBooksCorrelation[] = {
 	"1 Timothy", "1Tim", "1TI", "﻿Paul’s First Letter to Timothy.",
 	"2 Timothy", "2Tim", "2TI", "﻿Paul’s Second Letter to Timothy.",
 	"Titus", "Titus", "TIT", "﻿Paul’s Letter to Titus.",
-	"Philemon", "Phil", "PHM", "﻿Paul’s Letter to Philemon.",
+	"Philemon", "Phlm", "PHM", "﻿Paul’s Letter to Philemon.",
 	"Hebrews", "Heb", "HEB", "﻿The Letter to the Hebrews.",
 	"James", "Jas", "JAS", "﻿The Letter from James.",
 	"1 Peter", "1Pet", "1PE", "﻿Peter’s First Letter.",
